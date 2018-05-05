@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Graetzel</string>
+    <string name="title_activity_fragen_antworten"><b>Fragen &amp; Antworten</b></string>
+
 </resources>

@@ -3,5 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="logoColor">#00befe</color>
+
+
+    <color name="lightblue">#1CB5E0</color>
+    <color name="orange">#FFA500</color>
+    <color name="dunkelblau">#000046</color>
 </resources>
