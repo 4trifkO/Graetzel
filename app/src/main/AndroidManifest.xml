@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FragenActivity"></activity>
+        <activity android:name=".FragenActivity" />
+        <activity android:name=".RoomReservation"></activity>
     </application>
 
 </manifest>

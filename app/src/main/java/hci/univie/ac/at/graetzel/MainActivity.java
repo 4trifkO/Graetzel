@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonFragen;
+    private Button buttonRoomReservation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +23,24 @@ public class MainActivity extends AppCompatActivity {
                 openFragenActivity();
             }
         });
+
+        buttonRoomReservation = findViewById(R.id.room);
+        buttonRoomReservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRoomActivity();
+            }
+        });
     }
 
     public void openFragenActivity() {
         Intent intent = new Intent(this, FragenActivity.class);
+
+        startActivity(intent);
+    }
+
+    public void openRoomActivity() {
+        Intent intent = new Intent(this, RoomReservation.class);
 
         startActivity(intent);
     }

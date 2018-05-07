@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Graetzel</string>
     <string name="title_activity_fragen_antworten"><b>Fragen &amp; Antworten</b></string>
-
+    <string name="title_activity_room_reservation"><b>Raumreservierung</b></string>
+    <string name="spinner_title_room_reservation"><b>Raumart</b></string>
+    <string-array name="roomtype_array">
+        <item>Lernstube</item><item>Küche</item><item>Waschraum</item>
+    </string-array>
 </resources>
