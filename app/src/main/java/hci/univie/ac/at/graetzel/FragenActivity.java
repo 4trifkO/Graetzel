@@ -15,6 +15,8 @@ public class FragenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fragen);
         toolbar = findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -26,6 +28,12 @@ public class FragenActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id){
+            case android.R.id.home:
+                finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 }
