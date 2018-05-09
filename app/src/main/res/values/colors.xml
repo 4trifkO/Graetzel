@@ -6,9 +6,11 @@
 
     <color name="schwarz">#000000</color>
     <color name="graulich">#e5e5e5</color>
-    <color name="dunkel">#14213d</color>
+    <color name="dunkel">#131e38</color>
+    <color name="dunkel2">#14213d</color>
     <color name="orange">#fca311</color>
     <color name="tuerkis">#1795b8</color>
+    <color name="tuerkis2">#0f5f76</color>
     <color name="weiss">#ffffff</color>
 
 </resources>

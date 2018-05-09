@@ -22,6 +22,11 @@
         
     </style>
 
+    <style name="buttons" >
+        <item name="android:background">@mipmap/ic_launcher</item>
+        <item name="android:backgroundTint">?android:attr/colorControlHighlight</item>
+        <item name="android:textColor">@color/orange</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
