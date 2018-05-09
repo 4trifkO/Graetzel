@@ -23,9 +23,9 @@
     </style>
 
     <style name="buttons" >
-        <item name="android:background">@mipmap/ic_launcher</item>
-        <item name="android:backgroundTint">?android:attr/colorControlHighlight</item>
+        <item name="android:background">@drawable/mainbuttonrectangle</item>
         <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">19sp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
