@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:title="@string/title_activity_room_reservation"
-    app:titleTextColor="@color/lightblue"
+    app:titleTextColor="@color/dunkel"
     app:theme="@style/SecondTheme"
     app:popupTheme="@style/MenuTheme"
     app:subtitleTextColor="@color/orange"
