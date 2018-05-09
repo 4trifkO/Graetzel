@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ff4081</color>
 
+    <color name="schwarz">#000000</color>
+    <color name="graulich">#e5e5e5</color>
+    <color name="dunkel">#14213d</color>
+    <color name="orange">#fca311</color>
+    <color name="tuerkis">#1795b8</color>
+    <color name="weiss">#ffffff</color>
 
-    <color name="lightblue">#1CB5E0</color>
-    <color name="orange">#FFA500</color>
-    <color name="dunkelblau">#000046</color>
 </resources>
