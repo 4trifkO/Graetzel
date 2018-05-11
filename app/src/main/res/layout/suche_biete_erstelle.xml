@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SucheBieteErstelle">
+
+
+    <LinearLayout
+        style="@style/SucheBieteErstelleLinearLayout1"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/app_bar_suche_biete1">
+        </include>
+
+        <RadioGroup
+            android:id="@+id/rgSucheBiete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                style="@style/SucheBieteErstelleLinearLayout2"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbBiete"
+                    style="@style/SucheBieteErstelleRadioButton"
+                    android:text="Biete"
+                    android:onClick="onRadioButtonBiete"/>
+
+                <RadioButton
+                    android:id="@+id/rbSuche"
+                    style="@style/SucheBieteErstelleRadioButton"
+                    android:text="Suche"
+                    android:onClick="onRadioButtonSuche"/>
+            </LinearLayout>
+        </RadioGroup>
+
+        <TextView
+            style="@style/SucheBieteErstelleLabel"
+            android:text="Überschrift:" />
+        <EditText
+            android:id="@+id/editText_header"
+            style="@style/SucheBieteErstelleEditText"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            style="@style/SucheBieteErstelleLabel"
+            android:text="Beschreibung:" />
+        <EditText
+            android:id="@+id/editText_text"
+            style="@style/SucheBieteErstelleEditText"
+            android:inputType="textMultiLine"
+            android:text="" />
+
+        <TextView
+            style="@style/SucheBieteErstelleLabel"
+            android:id="@+id/kontakt"
+            android:text="Kontaktdaten:" />
+
+        <EditText
+            android:id="@+id/editText_kontaktdaten"
+            style="@style/SucheBieteErstelleEditText"
+            android:inputType="textMultiLine"
+            android:text="Inhalt" />
+
+        <Button
+            android:id="@+id/bSucheBieteErstelle"
+            style="@style/SucheBieteErstelleButton"
+            android:text="erstellen"
+            android:onClick="onButtonOK"/>
+
+        <Button
+            android:id="@+id/button_cancel"
+            style="@style/SucheBieteErstelleButton"
+            android:text="Chancel"
+            android:onClick="onButtonChancel"/>
+    </LinearLayout>
+
+</LinearLayout>

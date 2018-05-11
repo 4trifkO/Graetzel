@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SucheBieteSingle">
+
+    <ImageView
+        android:id="@+id/grid_image"
+        style="@style/SucheBieteSingleImageView">
+    </ImageView>
+
+    <LinearLayout
+        style="@style/SucheBieteSingleLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/suche_biete_single_header_text"
+            style="@style/SucheBieteSingleTextViewHeader"></TextView>
+
+        <TextView
+            android:id="@+id/suche_biete_single_text"
+            style="@style/SucheBieteSingleTextViewText"></TextView>
+    </LinearLayout>
+
+
+</LinearLayout>

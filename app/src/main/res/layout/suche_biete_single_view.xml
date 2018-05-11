@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SucheBieteSingleView"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        style="@style/SucheBieteLinearLayout"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/app_bar_suche_biete1">
+        </include>
+
+        <LinearLayout
+            style="@style/SucheBieteLinearLayout"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgSucheBieteSingleView"
+                style="@style/SucheBieteSingleViewImage">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvSucheBieteSingleView_header"
+                style="@style/SucheBieteSingleViewTextHeader"/>
+
+            <TextView
+                android:id="@+id/tvSucheBieteSingleView_text"
+                style="@style/SucheBieteSingleViewTextText"/>
+
+            <TextView
+                style="@style/SucheBieteSingleViewLabelKontakt"
+                android:text="Kontakt:" />
+
+            <TextView
+                android:id="@+id/tvSucheBieteSingleView_kontakt"
+                style="@style/SucheBieteSingleViewTextKontakt"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
