@@ -64,14 +64,16 @@
     <style name="SucheBieteErstelle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">@drawable/gradient_background</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:padding">5dp</item>
     </style>
     <style name="SucheBieteErstelleLinearLayout1" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@drawable/gradient_background</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
     <style name="SucheBieteErstelleLinearLayout2" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@drawable/gradient_background</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
@@ -129,8 +131,16 @@
         <item name="android:textColor">@color/weiss</item>
     </style>
 
+
+
     <!-- ############# SucheBieteSingleView ##################### -->
     <style name="SucheBieteSingleView" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@drawable/gradient_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="SucheBieteSingleView_LinearLayout" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">@drawable/gradient_background</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

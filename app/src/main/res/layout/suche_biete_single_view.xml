@@ -5,7 +5,7 @@
 
 
     <LinearLayout
-        style="@style/SucheBieteLinearLayout"
+        style="@style/SucheBieteSingleView_LinearLayout"
         android:orientation="vertical">
 
         <include
@@ -14,7 +14,7 @@
         </include>
 
         <LinearLayout
-            style="@style/SucheBieteLinearLayout"
+            style="@style/SucheBieteSingleView_LinearLayout"
             android:orientation="vertical">
 
             <ImageView
@@ -36,8 +36,7 @@
 
             <TextView
                 android:id="@+id/tvSucheBieteSingleView_kontakt"
-                style="@style/SucheBieteSingleViewTextKontakt"
-                android:layout_width="match_parent" />
+                style="@style/SucheBieteSingleViewTextKontakt"/>
         </LinearLayout>
 
 

@@ -9,8 +9,7 @@
 
         <include
             android:id="@+id/appbar"
-            layout="@layout/app_bar_suche_biete1">
-        </include>
+            layout="@layout/app_bar_suche_biete1"></include>
 
         <RadioGroup
             android:id="@+id/rgSucheBiete"
@@ -24,20 +23,21 @@
                 <RadioButton
                     android:id="@+id/rbBiete"
                     style="@style/SucheBieteErstelleRadioButton"
-                    android:text="Biete"
-                    android:onClick="onRadioButtonBiete"/>
+                    android:onClick="onRadioButtonBiete"
+                    android:text="Biete" />
 
                 <RadioButton
                     android:id="@+id/rbSuche"
                     style="@style/SucheBieteErstelleRadioButton"
-                    android:text="Suche"
-                    android:onClick="onRadioButtonSuche"/>
+                    android:onClick="onRadioButtonSuche"
+                    android:text="Suche" />
             </LinearLayout>
         </RadioGroup>
 
         <TextView
             style="@style/SucheBieteErstelleLabel"
             android:text="Überschrift:" />
+
         <EditText
             android:id="@+id/editText_header"
             style="@style/SucheBieteErstelleEditText"
@@ -47,6 +47,7 @@
         <TextView
             style="@style/SucheBieteErstelleLabel"
             android:text="Beschreibung:" />
+
         <EditText
             android:id="@+id/editText_text"
             style="@style/SucheBieteErstelleEditText"
@@ -54,8 +55,8 @@
             android:text="" />
 
         <TextView
-            style="@style/SucheBieteErstelleLabel"
             android:id="@+id/kontakt"
+            style="@style/SucheBieteErstelleLabel"
             android:text="Kontaktdaten:" />
 
         <EditText
@@ -67,14 +68,15 @@
         <Button
             android:id="@+id/bSucheBieteErstelle"
             style="@style/SucheBieteErstelleButton"
-            android:text="erstellen"
-            android:onClick="onButtonOK"/>
+            android:onClick="onButtonOK"
+            android:text="erstellen" />
 
         <Button
             android:id="@+id/button_cancel"
             style="@style/SucheBieteErstelleButton"
-            android:text="Chancel"
-            android:onClick="onButtonChancel"/>
+            android:onClick="onButtonChancel"
+            android:text="Chancel" />
+
     </LinearLayout>
 
 </LinearLayout>
