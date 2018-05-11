@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonSucheBiete"
         style="@style/buttons"
         android:layout_width="0dp"
         android:layout_height="145dp"
@@ -48,7 +48,7 @@
         android:layout_width="16dp"
         android:layout_height="490dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSucheBiete"
         app:layout_constraintStart_toEndOf="@+id/buttonFragen"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -75,7 +75,7 @@
         android:text="Abstimmungen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/space"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSucheBiete" />
 
     <Button
         android:id="@+id/room"

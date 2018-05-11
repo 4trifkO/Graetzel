@@ -18,6 +18,9 @@
         </activity>
         <activity android:name=".FragenActivity" />
         <activity android:name=".RoomReservation"></activity>
+        <activity android:name=".SucheBiete"></activity>
+        <activity android:name=".SucheBieteErstelle"></activity>
+        <activity android:name=".SucheBieteSingleView"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonFragen;
     private Button buttonRoomReservation;
+    private Button buttonSucheBiete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
                 openRoomActivity();
             }
         });
+
+        buttonSucheBiete = findViewById(R.id.buttonSucheBiete);
+        buttonSucheBiete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSucheBieteActivity();
+            }
+        });
+
+
     }
 
     public void openFragenActivity() {
@@ -38,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+    public void openSucheBieteActivity() {
+        Intent intent = new Intent(this, SucheBiete.class);
 
+        startActivity(intent);
+    }
     public void openRoomActivity() {
         Intent intent = new Intent(this, RoomReservation.class);
 
