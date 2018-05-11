@@ -87,17 +87,17 @@ public class SucheBieteData {
     }
 
     private void fill_data()    {
-        add(false,"Fahrradcodierung","online","",R.drawable.bild_bikefinder);
-        add(false,"English Coaching","British without accent","",0);
-        add(false,"Computerreparatur","auch Abends und am Wochenende!","",R.drawable.bild_computerreparatur);
-        add(false,"PC-Service","auch am Wochenende + Feiertag","",R.drawable.bild_pc);
-        add(false,"PC-Service","und Laptop Reparatur","",0);
-        add(false,"Kürkleider","für Eiskunstlauf, Rollschuhlauf, Eistanz Marken JM.in verschiedenen Design Farben, Größen","",R.drawable.bild_kuerkleider);
-        add(false,"Designe Top","Wunderschönen für Mädchen und Damen für Eiskunstlauf und verschiedenen Sportarten","",R.drawable.bild_wunderschoene_jacke);
-        add(false,"Kombi Set Top und Rock","Wunderschöne champagnerfarbige","",R.drawable.bild_elegante);
-        add(false,"Damen-Rauhleder-Jacke","Moosgrüne","",R.drawable.bild_moosgruene);
-        add(true,"Jacke","Jean - blau","",R.drawable.bild_jean);
-        add(true,"Jacke","Jean - schwarz","",R.drawable.bild_jean_schwarz);
+        add(false,"Fahrradcodierung","online","Tel: 0676-123212222",R.drawable.bild_bikefinder);
+        add(false,"English Coaching","British without accent","Tel: 0676-223212222",0);
+        add(false,"Computerreparatur","auch Abends und am Wochenende!","Tel: 0676-323212222",R.drawable.bild_computerreparatur);
+        add(false,"PC-Service","auch am Wochenende + Feiertag","Tel: 0676-423212222",R.drawable.bild_pc);
+        add(false,"PC-Service","und Laptop Reparatur","Tel: 0676-523212222",0);
+        add(false,"Kürkleider","für Eiskunstlauf, Rollschuhlauf, Eistanz Marken JM.in verschiedenen Design Farben, Größen","Tel: 0676-623212222",R.drawable.bild_kuerkleider);
+        add(false,"Designe Top","Wunderschönen für Mädchen und Damen für Eiskunstlauf und verschiedenen Sportarten","Tel: 0676-723212222",R.drawable.bild_wunderschoene_jacke);
+        add(false,"Kombi Set Top und Rock","Wunderschöne champagnerfarbige","Tel: 0676-823212222",R.drawable.bild_elegante);
+        add(false,"Damen-Rauhleder-Jacke","Moosgrüne","Tel: 0676-923212222",R.drawable.bild_moosgruene);
+        add(true,"Jacke","Jean - blau","Tel: 0676-1023212222",R.drawable.bild_jean);
+        add(true,"Jacke","Jean - schwarz","Tel: 0676-1123212222",R.drawable.bild_jean_schwarz);
 
     }
 }
