@@ -9,8 +9,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SucheBieteSingleView extends AppCompatActivity {
-    private Toolbar toolbar;
+public class SucheBieteSingleView extends FragenActivity {
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,23 +42,7 @@ public class SucheBieteSingleView extends AppCompatActivity {
     private void makeToolbar()  {
         toolbar = findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Suche & Biete");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        switch (id){
-            case android.R.id.home:
-                finish();
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

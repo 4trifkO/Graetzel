@@ -9,8 +9,10 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonFragen;
-    private Button buttonRoomReservation;
     private Button buttonSucheBiete;
+    private Button buttonGemeinsam;
+    private Button buttonAbstimmungen;
+    private Button buttonRoomReservation;
     private Button buttonProfil;
 
     @Override
@@ -26,14 +28,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonRoomReservation = findViewById(R.id.room);
-        buttonRoomReservation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openRoomActivity();
-            }
-        });
-
         buttonSucheBiete = findViewById(R.id.buttonSucheBiete);
         buttonSucheBiete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +35,31 @@ public class MainActivity extends AppCompatActivity {
                 openSucheBieteActivity();
             }
         });
+
+        buttonGemeinsam  = findViewById(R.id.buttonGemeinsam);
+        buttonGemeinsam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openGemeinsamActivity();
+            }
+        });
+
+        buttonAbstimmungen  = findViewById(R.id.buttonAbstimmungen);
+        buttonAbstimmungen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAbstimmungenActivity();
+            }
+        });
+
+        buttonRoomReservation = findViewById(R.id.buttonRoom);
+        buttonRoomReservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRoomActivity();
+            }
+        });
+
         buttonProfil = findViewById(R.id.buttonProfil);
         buttonProfil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 openProfile();
             }
         });
-
-
 
     }
 
@@ -63,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+    private void openGemeinsamActivity() {
+        Intent intent = new Intent(this, GemeinsamActivity.class);
+
+        startActivity(intent);
+    }
+    private void openAbstimmungenActivity() {
+        Intent intent = new Intent(this, AbstimmungenActivity.class);
+
+        startActivity(intent);
+    }
     public void openRoomActivity() {
         Intent intent = new Intent(this, RoomReservation.class);
 
@@ -70,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openProfile(){
         Intent intent = new Intent(this,Avatar1.class);
-        startActivity(intent);
 
+        startActivity(intent);
     }
 }

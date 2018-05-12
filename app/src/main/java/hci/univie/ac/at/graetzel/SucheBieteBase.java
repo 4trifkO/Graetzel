@@ -13,8 +13,8 @@ import android.widget.RadioButton;
  * Created by uni on 11.05.18.
  */
 
-public class SucheBieteBase extends AppCompatActivity {
-    private Toolbar toolbar;
+public class SucheBieteBase extends FragenActivity {
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class SucheBieteBase extends AppCompatActivity {
 
         toolbar = findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Suche & Biete");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

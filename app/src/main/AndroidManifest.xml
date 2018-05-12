@@ -22,6 +22,8 @@
         <activity android:name=".SucheBieteErstelle" />
         <activity android:name=".SucheBieteSingleView" />
         <activity android:name=".Avatar1" />
+        <activity android:name=".GemeinsamActivity" />
+        <activity android:name=".AbstimmungenActivity"></activity>
     </application>
 
 </manifest>

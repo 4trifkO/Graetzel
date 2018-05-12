@@ -9,7 +9,7 @@
 
         <include
             android:id="@+id/appbar"
-            layout="@layout/app_bar_suche_biete1"></include>
+            layout="@layout/app_bar"></include>
 
         <RadioGroup
             android:id="@+id/rgSucheBiete"

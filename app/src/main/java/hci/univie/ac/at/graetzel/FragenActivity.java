@@ -1,6 +1,7 @@
 package hci.univie.ac.at.graetzel;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragenActivity extends AppCompatActivity {
-    private Toolbar toolbar;
+    Toolbar toolbar;
     ListView listView;
     List<Frage> fragenListe;
     FloatingActionButton floatFragen;
@@ -31,11 +32,10 @@ public class FragenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragen);
+
         toolbar = findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         fragenListe = new ArrayList<>();
 
@@ -116,8 +116,39 @@ public class FragenActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Intent intent;
 
         switch (id){
+            case R.id.action_sneakyway_1:
+                intent = new Intent(this,FragenActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                break;
+            case R.id.action_sneakyway_2:
+                intent = new Intent(this,SucheBiete.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                break;
+            case R.id.action_sneakyway_3:
+                intent = new Intent(this,GemeinsamActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                break;
+            case R.id.action_sneakyway_4:
+                intent = new Intent(this,AbstimmungenActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                break;
+            case R.id.action_sneakyway_5:
+                intent = new Intent(this,RoomReservation.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                break;
+            case R.id.homeicon:
+                intent = new Intent(this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                break;
             case android.R.id.home:
                 finish();
         }

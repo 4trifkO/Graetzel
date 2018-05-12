@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/appbar"
-        layout="@layout/app_bar_suche_biete1">
+        layout="@layout/app_bar">
     </include>
 
     <LinearLayout

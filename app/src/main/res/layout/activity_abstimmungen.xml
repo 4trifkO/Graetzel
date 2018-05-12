@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context="hci.univie.ac.at.graetzel.AbstimmungenActivity">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/app_bar">
+    </include>
+
+</android.support.constraint.ConstraintLayout>

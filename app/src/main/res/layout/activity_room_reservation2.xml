@@ -86,7 +86,7 @@
 
     <include
         android:id="@+id/appbar"
-        layout="@layout/app_bar_room">
+        layout="@layout/app_bar">
 
     </include>
 

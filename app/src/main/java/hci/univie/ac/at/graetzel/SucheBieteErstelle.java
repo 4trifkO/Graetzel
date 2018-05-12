@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class SucheBieteErstelle extends AppCompatActivity {
-    private Toolbar toolbar;
+public class SucheBieteErstelle extends FragenActivity {
+    Toolbar toolbar;
     EditText header;
     EditText text;
     EditText kontakt;
@@ -64,23 +64,7 @@ public class SucheBieteErstelle extends AppCompatActivity {
     private void makeToolbar()  {
         toolbar = findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Suche & Biete");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        switch (id){
-            case android.R.id.home:
-                finish();
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
