@@ -21,16 +21,16 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/rbSuche"
+                    style="@style/SucheBieteErstelleRadioButton"
+                    android:onClick="onRadioButtonSuche"
+                    android:text="Suche" />
+                <RadioButton
                     android:id="@+id/rbBiete"
                     style="@style/SucheBieteErstelleRadioButton"
                     android:onClick="onRadioButtonBiete"
                     android:text="Biete" />
 
-                <RadioButton
-                    android:id="@+id/rbSuche"
-                    style="@style/SucheBieteErstelleRadioButton"
-                    android:onClick="onRadioButtonSuche"
-                    android:text="Suche" />
             </LinearLayout>
         </RadioGroup>
 
@@ -63,7 +63,7 @@
             android:id="@+id/editText_kontaktdaten"
             style="@style/SucheBieteErstelleEditText"
             android:inputType="textMultiLine"
-            android:text="Inhalt" />
+            android:text="" />
 
         <Button
             android:id="@+id/bSucheBieteErstelle"
@@ -75,7 +75,7 @@
             android:id="@+id/button_cancel"
             style="@style/SucheBieteErstelleButton"
             android:onClick="onButtonChancel"
-            android:text="Chancel" />
+            android:text="Abbruch" />
 
     </LinearLayout>
 

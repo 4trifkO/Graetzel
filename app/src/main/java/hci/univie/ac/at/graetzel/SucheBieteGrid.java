@@ -6,26 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class SucheBieteGrid extends BaseAdapter{
     private SucheBiete mContext;
-    boolean is_suche_option=true;
-    //private final boolean[] is_suche;
-    //private final String[] text_header;
-    //private final String[] text;
-    //private final int[] Imageid;
     SucheBieteData data;
     ImageView imageView;
     TextView vheader;
     TextView vtext;
     View grid;
 
-    public SucheBieteGrid(SucheBiete c, SucheBieteData data){//boolean[] is_suche, String[] text_header, String[] text, int[] Imageid ) {
+    public SucheBieteGrid(SucheBiete c, SucheBieteData data){
         mContext = c;
         this.data = data;
-        //get_widgets()  ;
     }
 
     private void get_widgets()  {
@@ -50,7 +43,7 @@ public class SucheBieteGrid extends BaseAdapter{
 
     @Override
     public long getItemId(int position) {
-        System.out.println("getItemId()");
+        //System.out.println("getItemId()");
         return 0;
     }
 
@@ -58,7 +51,6 @@ public class SucheBieteGrid extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         get_widgets();
         if (convertView == null) {
-            //position=data.getSelectedPos(position);
             imageView.setImageResource(data.getImageId(position));
             vheader.setText(data.getHeader(position));
             vtext.setText(data.getText(position));
