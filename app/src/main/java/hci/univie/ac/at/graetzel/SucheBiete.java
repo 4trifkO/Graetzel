@@ -13,7 +13,7 @@ import android.widget.GridView;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 
-public class SucheBiete extends AppCompatActivity {//BaseAdapter{
+public class SucheBiete extends AppCompatActivity {
     private Toolbar toolbar;
     GridView grid;
     RadioButton rbSuche, rbBiete,rbErstelle;
@@ -56,13 +56,12 @@ public class SucheBiete extends AppCompatActivity {//BaseAdapter{
         rbErstelle.setChecked(true);
     }
     private void load_grid()    {
-        SucheBieteGrid adapter = new SucheBieteGrid(this, data);//,is_suche, header, text, imageId);
+        SucheBieteGrid adapter = new SucheBieteGrid(this, data);
 
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                System.out.println("onItemClick="+position + " " +view.toString());
                 openSucheBieteSingleView(position);
             }
         });
@@ -71,9 +70,6 @@ public class SucheBiete extends AppCompatActivity {//BaseAdapter{
     public void onRadioButtonClicked(View view) {
         RadioButton rb=null;
         boolean checked = ((RadioButton) view).isChecked();
-
-        //System.out.println(view.getId() + " " +checked );
-
         switch(view.getId()) {
             case R.id.radioButton_suche:
                 if (checked)    select_suche();
@@ -110,8 +106,6 @@ public class SucheBiete extends AppCompatActivity {//BaseAdapter{
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent ret_data) {
-        //super.onActivityResult(requestCode, resultCode, data);
-        //System.out.println(data.size());
         Boolean sel_suche=true;
         if(resultCode== Activity.RESULT_OK) {
             this.data.add(

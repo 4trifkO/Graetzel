@@ -10,16 +10,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class SucheBieteErstelle extends AppCompatActivity {
     private Toolbar toolbar;
     EditText header;
     EditText text;
     EditText kontakt;
-    RadioGroup rg;
     RadioButton rbSuche,rbBiete;
 
     @Override
@@ -35,8 +34,6 @@ public class SucheBieteErstelle extends AppCompatActivity {
         makeToolbar();
     }
 
-
-
     public void onRadioButtonBiete(View view) {
         rbSuche.setChecked(false);
     }
@@ -45,13 +42,24 @@ public class SucheBieteErstelle extends AppCompatActivity {
     }
 
     public void onButtonOK(View view) {
-        Intent i = new Intent();
-        i.putExtra("suche",rbSuche.isChecked());
-        i.putExtra("header",header.getText().toString());
-        i.putExtra("text",text.getText().toString());
-        i.putExtra("kontackt",kontakt.getText().toString());
-        setResult(Activity.RESULT_OK,i);
-        go_back();
+        String h=header.getText().toString();
+        if(h.isEmpty()) {
+            Toast.makeText(this, "Bitte Überschrift angeben.", Toast.LENGTH_LONG).show();
+        } else {
+            String k=kontakt.getText().toString();
+            if(k.isEmpty()) {
+                Toast.makeText(this, "Bitte Kontaktdaten angeben.", Toast.LENGTH_LONG).show();
+            } else {
+                Intent i = new Intent();
+                i.putExtra("suche", rbSuche.isChecked());
+                i.putExtra("header", h);
+                i.putExtra("text", text.getText().toString());
+                i.putExtra("kontackt", k);
+                setResult(Activity.RESULT_OK, i);
+                go_back();
+            }
+        }
+
     }
     public void onButtonChancel(View view) {
         setResult(Activity.RESULT_CANCELED);

@@ -1,7 +1,5 @@
 package hci.univie.ac.at.graetzel;
 
-import android.widget.RadioButton;
-
 import java.util.ArrayList;
 
 
@@ -17,11 +15,10 @@ public class SucheBieteData {
         fill_data();
     }
 
-
-    public int size()   {
+    /*public int size()   {
         System.out.println("size()");
         return is_suche.size();
-    }
+    }*/
 
     public void add(boolean is_suche,String header, String text, String KontaktInfo, int imageID )   {
         this.is_suche.add(0,is_suche);
@@ -29,49 +26,44 @@ public class SucheBieteData {
         this.text.add(0,text);
         this.KontaktInfo.add(0,KontaktInfo);
         this.imageID.add(0,imageID);
-
-        System.out.println("add:"+is_suche+","+header+","+ text+","+KontaktInfo+","+imageID );
+        //System.out.println("add:"+is_suche+","+header+","+ text+","+KontaktInfo+","+imageID );
     }
 
     public int getSelectedCount()    {
         int c=0;
         for(int i=0;i<is_suche.size();i++)  if (is_suche.get(i)==is_suche_option) c++;
-        //System.out.println("getSelectedCount()="+c);
         return c;
     }
     private int getSelectedPos(int pos)    {
-        //System.out.println("getSelectedPos "+pos);
-        //System.out.println("is_suche_option="+is_suche_option);
         int c=0,i=0;
         for(;c<=pos;i++)  {
             if (is_suche.get(i)==is_suche_option)  c++;
         }
         --i;
-        //System.out.println("getSelectedPos="+i);
         return i;
     }
 
     public boolean getIs_suche(int pos) {
         return is_suche.get(getSelectedPos(pos));
     }
-    public void setIs_suche(int pos, boolean val) {
+    /*public void setIs_suche(int pos, boolean val) {
         this.is_suche.set(pos,val);
-    }
+    }*/
     public void setIsSucheOption(boolean val)   {
         is_suche_option=val;
     }
     public String getHeader(int pos) {
         return header.get(getSelectedPos(pos));
     }
-    public void setHeader(int pos, String header) {
+    /*public void setHeader(int pos, String header) {
         this.header.set(pos,header);
-    }
+    }*/
     public String getText(int pos) {
         return text.get(getSelectedPos(pos));
     }
-    public void setText(int pos, String text) {
+    /*public void setText(int pos, String text) {
         this.text.set(pos,text);
-    }
+    }*/
 
     public String getKontaktInfo(int pos) {
         return KontaktInfo.get(getSelectedPos(pos));
@@ -82,9 +74,9 @@ public class SucheBieteData {
         if(id==0) id=R.drawable.noimage;
         return id;
     }
-    public void setImageId(int pos, int imageId) {
+    /*public void setImageId(int pos, int imageId) {
         this.imageID.set(pos,imageId);
-    }
+    }*/
 
     private void fill_data()    {
         add(false,"Fahrradcodierung","online","Tel: 0676-123212222",R.drawable.bild_bikefinder);

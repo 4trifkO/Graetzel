@@ -26,17 +26,10 @@ public class SucheBieteSingleView extends AppCompatActivity {
 
         makeToolbar();
 
-        //b.putBoolean("Is_suche",data.getIs_suche(position));
         header.setText(b.getString("Header"));
         text.setText(b.getString("Text"));
         KontaktInfo.setText(b.getString("KontaktInfo"));
         image.setImageResource(b.getInt("ImageId"));
-
-
-        System.out.println(b.getString("Header"));
-        System.out.println(b.getString("Text"));
-        System.out.println(b.getString("KontaktInfo"));
-        System.out.println(b.getInt("ImageId"));
     }
 
     private void makeToolbar()  {

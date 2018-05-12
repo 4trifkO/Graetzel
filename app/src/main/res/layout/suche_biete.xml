@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/SucheBiete"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SucheBiete"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,28 +15,30 @@
         style="@style/SucheBieteLinearLayout">
 
         <RadioButton
-            android:id="@+id/radioButton_biete"
-            style="@style/SucheBieteRadioButton"
-            android:checked="false"
-            android:text="Biete"
-            android:onClick="onRadioButtonClicked"/>
-        <RadioButton
             android:id="@+id/radioButton_suche"
             style="@style/SucheBieteRadioButton"
             android:checked="true"
-            android:text="Suche"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android:text="Suche" />
+
+        <RadioButton
+            android:id="@+id/radioButton_biete"
+            style="@style/SucheBieteRadioButton"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:text="Biete" />
+
         <RadioButton
             android:id="@+id/radioButton_erstelle"
             style="@style/SucheBieteRadioButton"
             android:checked="false"
-            android:text="Erstellung"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android:text="Erstellung" />
 
     </LinearLayout>
 
     <GridView
         android:id="@+id/grid"
-        style="@style/SucheBieteGrid"/>
+        style="@style/SucheBieteGrid" />
 
 </LinearLayout>
