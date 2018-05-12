@@ -42,6 +42,12 @@
         <item name="android:textColor">@color/dunkel</item>
         <item name="android:textColorPrimary">@color/dunkel</item>
     </style>
+    <style name="floatDialogStyle" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="colorAccent">@color/dunkel</item>
+        <item name="android:background">@color/graulich</item>
+        <item name="android:textColor">@color/dunkel</item>
+        <item name="android:textColorPrimary">@color/dunkel</item>
+    </style>
 
     <!-- ############# SucheBiete ##################### -->
     <style name="SucheBiete" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
