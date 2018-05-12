@@ -17,10 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".FragenActivity" />
-        <activity android:name=".RoomReservation"></activity>
-        <activity android:name=".SucheBiete"></activity>
-        <activity android:name=".SucheBieteErstelle"></activity>
-        <activity android:name=".SucheBieteSingleView"></activity>
+        <activity android:name=".RoomReservation" />
+        <activity android:name=".SucheBiete" />
+        <activity android:name=".SucheBieteErstelle" />
+        <activity android:name=".SucheBieteSingleView" />
+        <activity android:name=".Avatar1" />
     </application>
 
 </manifest>

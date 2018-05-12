@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonFragen;
     private Button buttonRoomReservation;
     private Button buttonSucheBiete;
+    private Button buttonProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
                 openSucheBieteActivity();
             }
         });
+        buttonProfil = findViewById(R.id.buttonProfil);
+        buttonProfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openProfile();
+            }
+        });
+
 
 
     }
@@ -58,5 +67,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RoomReservation.class);
 
         startActivity(intent);
+    }
+    public void openProfile(){
+        Intent intent = new Intent(this,Avatar1.class);
+        startActivity(intent);
+
     }
 }
