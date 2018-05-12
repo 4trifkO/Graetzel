@@ -3,11 +3,18 @@
     <string name="title_activity_suche_biete">Suche / Biete</string>
     <string name="title_activity_fragen_antworten">Fragen &amp; Antworten</string>
     <string name="title_activity_room_reservation">Raumreservierung</string>
+    <string name="title_activity_profile">Profil</string>
     <string name="spinner_title_room_reservation">Raumauswahl</string>
     <string name="button_kitchen"><b>Küche</b></string>
     <string name="button_learn"><b>Lernstube</b></string>
     <string name="button_wash"><b>Waschraum</b></string>
+    <string name="profile_name">Stormtrooper 1</string>
+    <string name="zimmernummer">Zimmer:  5</string>
+    <string name="arbeitsort">Arbeitsort:  Deathstar</string>
+    <string name="hobbys">Hobby: Sauna</string>
     <string-array name="roomtype_array">
-        <item>Lernstube</item><item>Küche</item><item>Waschraum</item>
+        <item>Lernstube</item>
+        <item>Küche</item>
+        <item>Waschraum</item>
     </string-array>
 </resources>
