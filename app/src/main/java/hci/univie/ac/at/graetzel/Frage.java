@@ -1,23 +1,18 @@
 package hci.univie.ac.at.graetzel;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-
-/**
- * Created by Trifko on 10.05.2018.
- */
 
 public class Frage {
     private String textFrage;
     private ArrayList<Antwort> antworten;
 
+    /*-----Constructor-----*/
     public Frage(String textFrage) {
         this.textFrage = textFrage;
         antworten = new ArrayList<>();
     }
 
-
+    /*----------Getter------------*/
     public String getTextFrage() {
         return textFrage;
     }
@@ -26,6 +21,7 @@ public class Frage {
         return !antworten.isEmpty() ? antworten: null;
     }
 
+    //Neue Antwort zur Frage hinzufügen
     public void addAntwort(String antwort) {
         Antwort ant = new Antwort(antwort);
         antworten.add(ant);
