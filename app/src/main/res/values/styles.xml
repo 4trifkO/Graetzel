@@ -64,6 +64,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/weiss</item>
     </style>
     <style name="SucheBieteGrid" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -75,7 +76,7 @@
         <item name="android:stretchMode">columnWidth</item>
     </style>
 
-    <!-- ############# SucheBieteErstelle ##################### -->
+    <!-- ##########SucheBiete_AnfrageErstellungelle ##################### -->
     <style name="SucheBieteErstelle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">@drawable/gradient_background</item>
         <item name="android:layout_width">match_parent</item>
@@ -97,12 +98,14 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/weiss</item>
     </style>
     <style name="SucheBieteErstelleLabel" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/weiss</item>
     </style>
     <style name="SucheBieteErstelleEditText" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -148,7 +151,7 @@
 
 
 
-    <!-- ############# SucheBieteSingleView ##################### -->
+    <!-- ##########SucheBiete_ShowSingleView ##################### -->
     <style name="SucheBieteSingleView" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">@drawable/gradient_background</item>
         <item name="android:layout_width">match_parent</item>

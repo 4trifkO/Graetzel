@@ -19,8 +19,8 @@
         <activity android:name=".FragenActivity" />
         <activity android:name=".RoomReservation" />
         <activity android:name=".SucheBiete" />
-        <activity android:name=".SucheBieteErstelle" />
-        <activity android:name=".SucheBieteSingleView" />
+        <activity android:name=".SucheBiete_AnfrageErstellung" />
+        <activity android:name=".SucheBiete_ShowSingle" />
         <activity android:name=".Avatar1" />
         <activity android:name=".GemeinsamActivity" />
         <activity android:name=".AbstimmungenActivity" />

@@ -8,15 +8,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SucheBieteGrid extends BaseAdapter{
+public class SucheBieteGridData extends BaseAdapter{    // für die anzeige der einzelnen angebote im hauptfenster
     private SucheBiete mContext;
-    SucheBieteData data;
-    ImageView imageView;
-    TextView vheader;
-    TextView vtext;
-    View grid;
+    private SucheBieteData data;
+    private ImageView imageView;
+    private TextView vheader;
+    private TextView vtext;
+    private View grid;
 
-    public SucheBieteGrid(SucheBiete c, SucheBieteData data){
+    public SucheBieteGridData(SucheBiete c, SucheBieteData data){
         mContext = c;
         this.data = data;
     }

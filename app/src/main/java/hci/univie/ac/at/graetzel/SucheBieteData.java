@@ -3,16 +3,16 @@ package hci.univie.ac.at.graetzel;
 import java.util.ArrayList;
 
 
-public class SucheBieteData {
-    boolean is_suche_option=false;
-    ArrayList<Boolean> is_suche =  new ArrayList<Boolean>();
-    ArrayList<String> header =  new ArrayList<String>();
-    ArrayList<String> text =  new ArrayList<String>();
-    ArrayList<String> KontaktInfo = new ArrayList<String>();
-    ArrayList<Integer> imageID =  new ArrayList<Integer>();
+public class SucheBieteData {   // nimmt die Daten zu SucheBiete auf
+    private boolean is_suche_option=false;
+    private ArrayList<Boolean> is_suche =  new ArrayList<Boolean>();
+    private ArrayList<String> header =  new ArrayList<String>();
+    private ArrayList<String> text =  new ArrayList<String>();
+    private ArrayList<String> KontaktInfo = new ArrayList<String>();
+    private ArrayList<Integer> imageID =  new ArrayList<Integer>();
 
     SucheBieteData()    {
-        fill_data();
+        fill_dummy_data();
     }
 
     /*public int size()   {
@@ -29,12 +29,12 @@ public class SucheBieteData {
         //System.out.println("add:"+is_suche+","+header+","+ text+","+KontaktInfo+","+imageID );
     }
 
-    public int getSelectedCount()    {
+    public int getSelectedCount()    {  // abhängig ob suche oder biete selektiert
         int c=0;
         for(int i=0;i<is_suche.size();i++)  if (is_suche.get(i)==is_suche_option) c++;
         return c;
     }
-    private int getSelectedPos(int pos)    {
+    private int getSelectedPos(int pos)    {  // abhängig ob suche oder biete selektiert
         int c=0,i=0;
         for(;c<=pos;i++)  {
             if (is_suche.get(i)==is_suche_option)  c++;
@@ -43,42 +43,42 @@ public class SucheBieteData {
         return i;
     }
 
-    public boolean getIs_suche(int pos) {
+    public boolean getIs_suche(int pos) {  // abhängig ob suche oder biete selektiert
         return is_suche.get(getSelectedPos(pos));
     }
     /*public void setIs_suche(int pos, boolean val) {
         this.is_suche.set(pos,val);
     }*/
-    public void setIsSucheOption(boolean val)   {
+    public void setIsSucheOption(boolean val)   {   // augewählt vom nuter über optionbutton
         is_suche_option=val;
     }
-    public String getHeader(int pos) {
+    public String getHeader(int pos) {  // abhängig ob suche oder biete selektiert
         return header.get(getSelectedPos(pos));
     }
     /*public void setHeader(int pos, String header) {
         this.header.set(pos,header);
     }*/
-    public String getText(int pos) {
+    public String getText(int pos) {  // abhängig ob suche oder biete selektiert
         return text.get(getSelectedPos(pos));
     }
     /*public void setText(int pos, String text) {
         this.text.set(pos,text);
     }*/
 
-    public String getKontaktInfo(int pos) {
+    public String getKontaktInfo(int pos) {  // abhängig ob suche oder biete selektiert
         return KontaktInfo.get(getSelectedPos(pos));
     }
 
-    public int getImageId(int pos) {
+    public int getImageId(int pos) {  // abhängig ob suche oder biete selektiert
         int id=imageID.get(getSelectedPos(pos));
-        if(id==0) id=R.drawable.noimage;
+        if(id==0) id=R.drawable.noimage;    // kein bild vorhanden
         return id;
     }
     /*public void setImageId(int pos, int imageId) {
         this.imageID.set(pos,imageId);
     }*/
 
-    private void fill_data()    {
+    private void fill_dummy_data()    {
         add(false,"Fahrradcodierung","online","Tel: 0676-123212222",R.drawable.bild_bikefinder);
         add(false,"English Coaching","British without accent","Tel: 0676-223212222",0);
         add(false,"Computerreparatur","auch Abends und am Wochenende!","Tel: 0676-323212222",R.drawable.bild_computerreparatur);

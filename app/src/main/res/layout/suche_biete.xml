@@ -18,21 +18,21 @@
             android:id="@+id/radioButton_suche"
             style="@style/SucheBieteRadioButton"
             android:checked="true"
-            android:onClick="onRadioButtonClicked"
+            android:onClick="onSucheBiete_RadioButtonClicked"
             android:text="Suche" />
 
         <RadioButton
             android:id="@+id/radioButton_biete"
             style="@style/SucheBieteRadioButton"
             android:checked="false"
-            android:onClick="onRadioButtonClicked"
+            android:onClick="onSucheBiete_RadioButtonClicked"
             android:text="Biete" />
 
         <RadioButton
             android:id="@+id/radioButton_erstelle"
             style="@style/SucheBieteRadioButton"
             android:checked="false"
-            android:onClick="onRadioButtonClicked"
+            android:onClick="onSucheBiete_RadioButtonClicked"
             android:text="Erstellung" />
 
     </LinearLayout>

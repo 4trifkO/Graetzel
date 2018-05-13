@@ -3,35 +3,32 @@ package hci.univie.ac.at.graetzel;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class SucheBieteErstelle extends FragenActivity {
-    Toolbar toolbar;
-    EditText header;
-    EditText text;
-    EditText kontakt;
-    RadioButton rbSuche,rbBiete;
+public class SucheBiete_AnfrageErstellung extends FragenActivity {    // zum erstellen einer neuen SucheBiete anfrage
+    private Toolbar toolbar;
+    private EditText header, text, kontakt;
+    private RadioButton rbSuche,rbBiete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.suche_biete_erstelle);
+        get_widgets();
+        makeToolbar();
+        rbBiete.setChecked(true);
+    }
+    private void get_widgets()  {
+        toolbar = findViewById(R.id.appbar);
         header = (EditText) findViewById(R.id.editText_header);
         text = (EditText) findViewById(R.id.editText_text);
         kontakt = (EditText) findViewById(R.id.editText_kontaktdaten);
         rbSuche = (RadioButton) findViewById(R.id.rbSuche);
         rbBiete = (RadioButton) findViewById(R.id.rbBiete);
-        rbBiete.setChecked(true);
-        makeToolbar();
     }
 
     public void onRadioButtonBiete(View view) {
@@ -70,7 +67,6 @@ public class SucheBieteErstelle extends FragenActivity {
     }
 
     private void makeToolbar()  {
-        toolbar = findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle("Suche & Biete");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

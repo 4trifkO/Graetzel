@@ -4,21 +4,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 
-public class SucheBiete extends FragenActivity {//BaseAdapter{
-    Toolbar toolbar;
-    GridView grid;
-    RadioButton rbSuche, rbBiete,rbErstelle;
-
-    SucheBieteData data=new SucheBieteData();
+public class SucheBiete extends FragenActivity {    // die Hauptklasse von SucheBiete
+    private Toolbar toolbar;
+    private GridView grid;
+    private RadioButton rbSuche, rbBiete,rbErstelle;
+    private SucheBieteData data=new SucheBieteData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +22,9 @@ public class SucheBiete extends FragenActivity {//BaseAdapter{
 
         get_widgets();
         makeToolbar();
+        load_data();
         select_biete();
-        load_grid();
+        setOnItemClick();
     }
 
     private void get_widgets()  {
@@ -55,25 +51,22 @@ public class SucheBiete extends FragenActivity {//BaseAdapter{
         rbBiete.setChecked(false);
         rbErstelle.setChecked(true);
     }
-    private void load_grid()    {
-        SucheBieteGrid adapter = new SucheBieteGrid(this, data);//,is_suche, header, text, imageId);
-
+    private void load_data()    {
+        SucheBieteGridData adapter = new SucheBieteGridData(this, data);
         grid.setAdapter(adapter);
+    }
+    private void setOnItemClick()    {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                System.out.println("onItemClick="+position + " " +view.toString());
-                openSucheBieteSingleView(position);
+                openSucheBiete_SingleView(position);
             }
         });
     }
 
-    public void onRadioButtonClicked(View view) {
+    public void onSucheBiete_RadioButtonClicked(View view) {
         RadioButton rb=null;
         boolean checked = ((RadioButton) view).isChecked();
-
-        //System.out.println(view.getId() + " " +checked );
-
         switch(view.getId()) {
             case R.id.radioButton_suche:
                 if (checked)    select_suche();
@@ -84,15 +77,15 @@ public class SucheBiete extends FragenActivity {//BaseAdapter{
             case R.id.radioButton_erstelle:
                 if (checked) {
                     select_erstelle();
-                    openSucheBieteErstelle();
+                    openSucheBiete_Erstelle();
                 }
                 break;
         }
-        load_grid();
+        load_data();
     }
 
-    public void openSucheBieteSingleView(int position) {
-        Intent intent = new Intent(this, SucheBieteSingleView.class);
+    public void openSucheBiete_SingleView(int position) {
+        Intent intent = new Intent(this, SucheBiete_ShowSingle.class);
         Bundle b = new Bundle();
         b.putBoolean("Is_suche",data.getIs_suche(position));
         b.putString("Header",data.getHeader(position));
@@ -101,17 +94,14 @@ public class SucheBiete extends FragenActivity {//BaseAdapter{
         b.putInt("ImageId",data.getImageId(position));
         intent.putExtras(b);
         startActivity(intent);
-
     }
-    public void openSucheBieteErstelle() {
-        Intent intent = new Intent(this, SucheBieteErstelle.class);
+    public void openSucheBiete_Erstelle() {
+        Intent intent = new Intent(this, SucheBiete_AnfrageErstellung.class);
         startActivityForResult(intent,0);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent ret_data) {
-        //super.onActivityResult(requestCode, resultCode, data);
-        //System.out.println(data.size());
         Boolean sel_suche=true;
         if(resultCode== Activity.RESULT_OK) {
             this.data.add(
@@ -124,7 +114,7 @@ public class SucheBiete extends FragenActivity {//BaseAdapter{
         if(sel_suche)  // suche anfrage
                 select_suche();
         else    select_biete();
-        load_grid();
+        load_data();
     }
 
     private void makeToolbar()  {
