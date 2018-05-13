@@ -60,7 +60,7 @@ public class FragenActivity extends AppCompatActivity {
 
     private void openDialog(){
         LayoutInflater inflater = LayoutInflater.from(this);
-        View subView = inflater.inflate(R.layout.floatdialog_layout, null);
+        View subView = inflater.inflate(R.layout.floatdialog_fragen_layout, null);
 
         final EditText editNeueFrage = (EditText) subView.findViewById(R.id.editNeueFrage);
 

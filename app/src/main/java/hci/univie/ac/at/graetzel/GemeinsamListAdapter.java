@@ -2,12 +2,10 @@ package hci.univie.ac.at.graetzel;
 
 import android.content.Context;
 
-import android.content.DialogInterface;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +13,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /*Der Adapter kümmert sich um den View & die Funktion jedes einzelnen Items der ListView*/
 public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
@@ -28,6 +27,7 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
     private Context context;
     private int layoutResource;
     private List<SocialAktivitaet> aktivitaetenList;
+    private String[] fakeNamen = {"Jelena","Stefan","Klaus","Benni","Oliver","Michael","Stefi","Anna","Emili","Stormtrooper"};
 
     /*--------Constructor--------*/
     public GemeinsamListAdapter(Context context, int resource, List<SocialAktivitaet> liste) {
@@ -44,19 +44,25 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(layoutResource, null);
 
-        final TextView textAktivitaet = (TextView) view.findViewById(R.id.textAktivitaet);
-        SocialAktivitaet frage = aktivitaetenList.get(position);
+        //Verbindet Backend mit Frontend Widgets
+        SocialAktivitaet aktivitaet = aktivitaetenList.get(position);
+        TextView textAktivitaet = (TextView) view.findViewById(R.id.textAktivitaet);
+        TextView textOrt = (TextView) view.findViewById(R.id.textOrt);
+        TextView textDate = (TextView) view.findViewById(R.id.textDate);
+        TextView textTeilnehmer = (TextView) view.findViewById(R.id.textTeilnehmer);
 
-        /*textAktivitaet.setText(frage.getTextOrt());
+        Button buttonTeilnehmen = (Button) view.findViewById(R.id.buttonTeilnehmen);
+        final Switch switchTeilnehmer = (Switch) view.findViewById(R.id.switchGemeinsam);
+        final ConstraintLayout layout = view.findViewById(R.id.layoutGemeinsam);
 
-        final Switch switchAntworten = (Switch) view.findViewById(R.id.switchAntworten);
-        final ConstraintLayout layout = view.findViewById(R.id.layoutAntworten);
-        TextView textAntworten = (TextView) view.findViewById(R.id.textAntworten);
-        textAntworten.setText(arrayListToTextView(frage.getAntworten()));
+        //Setzen der Frontend-Texte
+        textAktivitaet.setText(aktivitaet.getAktivitaet());
+        textOrt.setText(aktivitaet.getOrt());
+        textDate.setText(aktivitaet.getDatum());
+        textTeilnehmer.setText(arrayListToTextView(aktivitaet.getTeilnehmerListe()));
 
-        Button buttonAntworten = (Button) view.findViewById(R.id.buttonAntworten);
-
-        switchAntworten.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*Die Teilnehmer-Liste wird abhängig vom Switch angezeigt oder versteckt*/
+        switchTeilnehmer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked){
@@ -68,32 +74,33 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
             }
         });
 
-        buttonAntworten.setOnClickListener(new View.OnClickListener() {
+        /*Fügt beim Click des Teilnehmen-Buttons einen Random-Teilnehmer zur Aktivität hinzu*/
+        buttonTeilnehmen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 try{
-                    openDialog(position, textFrage.getText().toString());
+                    addRandomTeilnehmer(position);
 
                 }catch(Exception e){
-                    Log.e("Antwortfehler:", e.getMessage());
+                    Log.e("AddTeilnehmerFehler:", e.getMessage());
                 }
             }
         });
 
-        */
         return view;
     }
 
-    private String arrayListToTextView(ArrayList<Antwort> array){
+    //Wandelt komplette ArrayList von Objekten zu einem String und liefert den String zurück
+    private String arrayListToTextView(ArrayList<User> array){
         String returnString = "";
 
         if(array == null){
-            returnString += "Es existieren keine Antworten!!!";
+            returnString += "Es existieren keine Teilnehmer!!!";
         }else{
             
-            for (Antwort a:array) {
-                returnString += "Antwort: " + a.getAntwortText();
+            for (User a:array) {
+                returnString += "Teilnehmer: " + a.getName();
                 if(!array.get(array.size() - 1).equals(a)){
                     returnString += "\n\n";
                 }
@@ -102,43 +109,22 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
         return returnString;
     }
 
-    /*
-    private void openDialog(final int position, String textFrage){
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View subView = inflater.inflate(R.layout.antwortdialog_layout, null);
-        TextView dialogTextView = (TextView) subView.findViewById(R.id.dialogTextView);
-        dialogTextView.setText("Eingabe:");
-        final EditText editAntwort = (EditText) subView.findViewById(R.id.editAntwort);
+    //Generiert Randomzahlen
+    //Abhängig von der Randomzahl wird ein Name aus dem FakeNamen-Array gezogen
+    //Neuer Teilnehmer wird zur Aktivität hinzugefügt
+    public void addRandomTeilnehmer(int position){
+        Random rn = new Random();
+        int randomName = rn.nextInt(10);
+        int randomZahl = rn.nextInt(1000);
+        try{
+            aktivitaetenList.get(position).addTeilnehmer(fakeNamen[randomName]+randomZahl);
+            notifyDataSetChanged();
+        }catch(Exception e){
+            Log.e("AddRandomTeilnehmer",e.getMessage());
+        }finally {
+            Toast.makeText(context,"Teilnehmer hinzugefügt",Toast.LENGTH_LONG).show();
+        }
 
-
-        final AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogStyle);
-        builder.setTitle(textFrage);
-        builder.setMessage("Neue Antwort");
-        builder.setView(subView);
-
-        AlertDialog dialog = builder.create();
-
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                fragenListe.get(position).addAntwort(editAntwort.getText().toString());
-
-                notifyDataSetChanged();
-            }
-        });
-
-        builder.setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //This will close the Dialog
-            }
-        });
-
-
-
-        builder.show();
     }
 
-    */
 }
