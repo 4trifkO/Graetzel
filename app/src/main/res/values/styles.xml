@@ -20,7 +20,7 @@
         <item name="android:textColor">@color/dunkel</item>
         <item name="overlapAnchor">false</item>
         <item name="android:dropDownVerticalOffset">-4.0dp</item>
-        
+
     </style>
 
     <style name="buttons" >
@@ -201,7 +201,6 @@
         <item name="android:inputType">textMultiLine</item>
         <item name="android:text"></item>
     </style>
-
 
 
 </resources>

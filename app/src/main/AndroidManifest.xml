@@ -23,7 +23,8 @@
         <activity android:name=".SucheBieteSingleView" />
         <activity android:name=".Avatar1" />
         <activity android:name=".GemeinsamActivity" />
-        <activity android:name=".AbstimmungenActivity"></activity>
+        <activity android:name=".AbstimmungenActivity" />
+        <activity android:name=".RoomCalendar"></activity>
     </application>
 
 </manifest>

@@ -25,13 +25,13 @@
         android:layout_marginTop="8dp"
         android:textColor="@color/weiss"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAntworten"
+        app:layout_constraintBottom_toTopOf="@+id/btnReservation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageViewFragen"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonAntworten"
+        android:id="@+id/btnReservation"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"

@@ -58,7 +58,7 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
         TextView textAntworten = (TextView) view.findViewById(R.id.textAntworten);
         textAntworten.setText(arrayListToTextView(frage.getAntworten()));
 
-        Button buttonAntworten = (Button) view.findViewById(R.id.buttonAntworten);
+        Button buttonAntworten = (Button) view.findViewById(R.id.btnReservation);
 
         switchAntworten.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
