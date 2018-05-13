@@ -1,23 +1,31 @@
 package hci.univie.ac.at.graetzel;
 
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
-
+//Data-Klasse für die App-Funktion "Gemeinsame Aktivitäten"
 public class SocialAktivitaet {
     private String aktivitaet;
     private String ort;
-    private Date uhrzeit;
     private Date datum;
+    private SimpleDateFormat sdf = new SimpleDateFormat("hh:mm dd/MM/yyyy");
     private ArrayList<User> teilnehmerListe;
 
     /*--------Constructor--------*/
-    public SocialAktivitaet(String aktivitaet, String ort, Date uhrzeit, Date datum) {
+    public SocialAktivitaet(String aktivitaet, String ort, String datum) throws Exception{
         this.aktivitaet = aktivitaet;
         this.ort = ort;
-        this.uhrzeit = uhrzeit;
-        this.datum = datum;
+        teilnehmerListe = new ArrayList<>();
+        try {
+            this.datum = new Date();
+            this.datum = sdf.parse(datum);
+        } catch (Exception e) {
+            Log.e("DateParser",e.getMessage());
+            throw e;
+        }
     }
 
     /*----------Getter------------*/
@@ -29,12 +37,12 @@ public class SocialAktivitaet {
         return ort;
     }
 
-    public Date getUhrzeit() {
-        return uhrzeit;
+    public String getDatum() {
+        return sdf.format(datum)+"";
     }
 
-    public Date getDatum() {
-        return datum;
+    public ArrayList<User> getTeilnehmerListe() {
+        return !teilnehmerListe.isEmpty() ? teilnehmerListe: null;
     }
 
     //Neuen Teilnehmer zur Aktivität hinzufügen
