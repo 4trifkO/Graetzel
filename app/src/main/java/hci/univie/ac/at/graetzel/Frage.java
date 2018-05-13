@@ -2,6 +2,7 @@ package hci.univie.ac.at.graetzel;
 
 import java.util.ArrayList;
 
+//Data-Klasse für die App-Funktion "Fragen & Antworten"
 public class Frage {
     private String textFrage;
     private ArrayList<Antwort> antworten;

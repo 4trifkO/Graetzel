@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-//Klasse für die Activity und AppFunktion "Gemeinsame Aktivitäten"
+//Klasse für die Activity und App-Funktion "Gemeinsame Aktivitäten"
 public class GemeinsamActivity extends FragenActivity {
     ListView listView;
     List<SocialAktivitaet> aktivitaetenList;

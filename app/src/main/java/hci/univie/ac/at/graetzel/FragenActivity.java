@@ -21,25 +21,29 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+//Klasse für die Activity und App-Funktion "Fragen & Antworten"
 public class FragenActivity extends AppCompatActivity {
     Toolbar toolbar;
     ListView listView;
     List<Frage> fragenListe;
     FloatingActionButton floatFragen;
     FragenListAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragen);
 
+        //Setzen der Actiontoolbar
         toolbar = findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //FakeData
         fragenListe = new ArrayList<>();
-
         fragenListe.add(new Frage("Wo gibt es eine Party heute?"));
         fragenListe.add(new Frage("Wer spielt wieder so laut Musik?"));
+
 
         listView = (ListView) findViewById(R.id.listview);
 
@@ -47,15 +51,15 @@ public class FragenActivity extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
+        //Clicklistener vom Plus-Button rechts unten am Bildschirm
         floatFragen = (FloatingActionButton) findViewById(R.id.floatFragen);
         floatFragen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Öffnet den Dialog wo man eine neue Frage erstellen kann
                 openDialog();
             }
         });
-
-
     }
 
     private void openDialog(){
@@ -105,6 +109,7 @@ public class FragenActivity extends AppCompatActivity {
         builder.show();
     }
 
+    //Adden eines Menüs in der Action-Toolbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -112,6 +117,11 @@ public class FragenActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    //Definition was bei welchem Menü-Punkt gemacht wird
+    //FLAG_ACTIVITY_REORDER_TO_FRONT = Wenn eine Activity bereits im hintergrund aktiv ist dann wird
+    //                                  keine neue erzeugt sondern die alte erscheint
+    //FLAG_ACTIVITY_CLEAR_TOP = bringt die gewünschte neue Activity zum vorschein und löscht alle
+    //                          anderen die im Hintergrund sind
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

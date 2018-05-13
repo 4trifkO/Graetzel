@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Verbindung zwischen Frontend Buttons und Backend und ihre OnClickListener,
+        //eine neue Seite bzw. Activity öffnet
         buttonFragen  = findViewById(R.id.buttonFragen);
         buttonFragen.setOnClickListener(new View.OnClickListener() {
             @Override

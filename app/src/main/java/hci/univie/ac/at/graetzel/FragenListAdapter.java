@@ -23,17 +23,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-/**
- * Created by Trifko on 10.05.2018.
- */
-
+/*Der Adapter kümmert sich um den View & die Funktion jedes einzelnen Items der ListView*/
 public class FragenListAdapter extends ArrayAdapter<Frage> {
 
     private Context context;
     private int layoutResource;
     private List<Frage> fragenListe;
 
-
+    /*--------Constructor--------*/
     public FragenListAdapter(Context context, int resource, List<Frage> fragenListe) {
         super(context, resource, fragenListe);
         this.context = context;
@@ -48,18 +45,20 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(layoutResource, null);
 
-        final TextView textFrage = (TextView) view.findViewById(R.id.textFrage);
+        //Verbindet Backend mit Frontend Widgets
         Frage frage = fragenListe.get(position);
+        final TextView textFrage = (TextView) view.findViewById(R.id.textFrage);
+        TextView textAntworten = (TextView) view.findViewById(R.id.textAntworten);
 
-        textFrage.setText(frage.getTextFrage());
-
+        Button buttonAntworten = (Button) view.findViewById(R.id.buttonAntworten);
         final Switch switchAntworten = (Switch) view.findViewById(R.id.switchAntworten);
         final ConstraintLayout layout = view.findViewById(R.id.layoutAntworten);
-        TextView textAntworten = (TextView) view.findViewById(R.id.textAntworten);
+
+        //Setzen der Frontend-Texte
+        textFrage.setText(frage.getTextFrage());
         textAntworten.setText(arrayListToTextView(frage.getAntworten()));
 
-        Button buttonAntworten = (Button) view.findViewById(R.id.btnReservation);
-
+        /*Die Antworten-Liste wird abhängig vom Switch angezeigt oder versteckt*/
         switchAntworten.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -72,11 +71,14 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
             }
         });
 
+        //Antworten Button onclicklistener
         buttonAntworten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 try{
+                    /*Öffnet beim Click des Antworten-Buttons ein Dialog Fenster wo man eine neue Antwort
+                      verfassen kann*/
                     openDialog(position, textFrage.getText().toString());
 
                 }catch(Exception e){
@@ -85,10 +87,9 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
             }
         });
 
-
         return view;
     }
-
+    //Wandelt komplette ArrayList von Objekten zu einem String und liefert den String zurück
     private String arrayListToTextView(ArrayList<Antwort> array){
         String returnString = "";
 
