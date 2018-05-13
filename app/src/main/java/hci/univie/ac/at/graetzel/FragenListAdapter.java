@@ -18,6 +18,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,10 +113,11 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
     private void openDialog(final int position, String textFrage){
         LayoutInflater inflater = LayoutInflater.from(context);
         View subView = inflater.inflate(R.layout.antwortdialog_layout, null);
+
         TextView dialogTextView = (TextView) subView.findViewById(R.id.dialogTextView);
         dialogTextView.setText("Eingabe:");
-        final EditText editAntwort = (EditText) subView.findViewById(R.id.editAntwort);
 
+        final EditText editAntwort = (EditText) subView.findViewById(R.id.editAntwort);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.AlertDialogStyle);
         builder.setTitle(textFrage);
@@ -127,10 +129,13 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-                fragenListe.get(position).addAntwort(editAntwort.getText().toString());
-
-                notifyDataSetChanged();
+                if(editAntwort.getText().toString().equals("")){
+                    Toast.makeText(context,"Sie müssen eine Antwort eingeben", Toast.LENGTH_SHORT).show();
+                }else {
+                    fragenListe.get(position).addAntwort(editAntwort.getText().toString());
+                    notifyDataSetChanged();
+                    Toast.makeText(context,"Antwort hinzugefügt", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
