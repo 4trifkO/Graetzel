@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageViewFragen"
+        android:id="@+id/imageViewAbstimmung"
         android:contentDescription="personBild"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,37 +14,39 @@
         android:layout_marginTop="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/personicon" />
+        app:srcCompat="@drawable/thumbsicon" />
 
     <TextView
-        android:id="@+id/textFrage"
+        android:id="@+id/textAbstimmung"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/weiss"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAntworten"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAbstimmen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewFragen"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAbstimmung"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonAntworten"
+        android:id="@+id/buttonAbstimmen"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/itembutton"
-        android:text="Antworten"
+        android:text="Diagramm"
         android:textColor="@color/weiss"
-        app:layout_constraintBottom_toTopOf="@+id/layoutAntworten"
-        app:layout_constraintStart_toEndOf="@+id/imageViewFragen"
-        app:layout_constraintTop_toBottomOf="@+id/textFrage" />
+        app:layout_constraintBottom_toTopOf="@+id/layoutAbstimmen"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAbstimmung"
+        app:layout_constraintTop_toBottomOf="@+id/textAbstimmung" />
 
     <Switch
-        android:id="@+id/switchAntworten"
+        android:id="@+id/switchAbstimmen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -52,42 +54,30 @@
         android:layout_marginTop="16dp"
         android:checked="false"
         android:splitTrack="false"
-        android:text="Antworten anzeigen"
+        android:text="Abstimmen"
         android:textColor="@color/orange"
         android:theme="@style/SwitchTheme"
         android:thumbTint="@color/orange"
-        app:layout_constraintBottom_toTopOf="@+id/layoutAntworten"
+        app:layout_constraintBottom_toTopOf="@+id/layoutAbstimmen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textFrage"
+        app:layout_constraintTop_toBottomOf="@+id/textAbstimmung"
         tools:checked="false" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/layoutAntworten"
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/layoutAbstimmen"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:background="#30000000"
+        android:layout_marginStart="8dp"
+        android:background="#00000000"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewFragen">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAbstimmung">
 
-        <TextView
-            android:id="@+id/textAntworten"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Antwort: "
-            android:textColor="@color/weiss"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 

@@ -146,8 +146,6 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
             }
         });
 
-
-
         builder.show();
     }
 
