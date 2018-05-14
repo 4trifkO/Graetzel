@@ -43,6 +43,7 @@ public class FragenActivity extends AppCompatActivity {
         fragenListe = new ArrayList<>();
         fragenListe.add(new Frage("Wo gibt es eine Party heute?"));
         fragenListe.add(new Frage("Wer spielt wieder so laut Musik?"));
+        fragenListe.add(new Frage("Wo gibt es gute Pizza?"));
 
 
         listView = (ListView) findViewById(R.id.listview);

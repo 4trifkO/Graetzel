@@ -39,16 +39,21 @@ public class AbstimmungenActivity extends FragenActivity {
 
         //FakeData
         abstimmungDataList = new ArrayList<>();
+
         AbstimmungData fake = new AbstimmungData("SPÖ oder FPÖ?",
                 new ArrayList<String>(Arrays.asList("SPÖ","FPÖ") ) );
         AbstimmungData fake2 = new AbstimmungData("Bier, Wein oder Alk ist Alk :)",
                 new ArrayList<String>(Arrays.asList("Bier","Wein","Alk ist Alk") ) );
+        AbstimmungData fake3 = new AbstimmungData("Lieblings-Programmiermodul",
+                new ArrayList<String>(Arrays.asList("ADS","SWE","SWA","HCI","DSE") ) );
 
         fake.randomData();
         fake2.randomData();
+        fake3.randomData();
 
         abstimmungDataList.add(fake);
         abstimmungDataList.add(fake2);
+        abstimmungDataList.add(fake3);
 
         listView = (ListView) findViewById(R.id.listviewAbstimmen);
 

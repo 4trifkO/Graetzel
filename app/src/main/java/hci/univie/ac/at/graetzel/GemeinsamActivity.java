@@ -40,6 +40,7 @@ public class GemeinsamActivity extends FragenActivity {
         try {
             aktivitaetenList.add(new SocialAktivitaet("Laufen", "U1 Donauinsel", "12:00 20/05/2018"));
             aktivitaetenList.add(new SocialAktivitaet("Kaffee trinken", "Zimmer 21", "15:00 16/05/2018"));
+            aktivitaetenList.add(new SocialAktivitaet("HCI Programmieren", "Währingerstr. 29", "15:00 20/05/2018"));
         }catch(Exception e){
             Log.e("Add FakeAktivity", "Failed");
         }
