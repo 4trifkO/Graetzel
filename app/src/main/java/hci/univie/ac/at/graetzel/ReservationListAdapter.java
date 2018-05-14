@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-
+//adapter is taking care of the list view as in the 'FragenActivity'
 public class ReservationListAdapter extends ArrayAdapter<ReservationTime>{
     private Context context;
     private int layoutResource;
@@ -45,6 +43,9 @@ public class ReservationListAdapter extends ArrayAdapter<ReservationTime>{
         Button buttonReservation = (Button) view.findViewById(R.id.btnReservation);
         Button btncancel = (Button) view.findViewById(R.id.btnCancelReservation);
 
+        // if there are no reservation for the actual position then show the reservation
+        // button and if, in our simple case, the room was not reserved from the
+        // other default user 1, then show the cancel button instead
         if(reservationTimeList.get(position).roomIsFree()) {
             btncancel.setVisibility(View.INVISIBLE);
         }else{
@@ -76,7 +77,7 @@ public class ReservationListAdapter extends ArrayAdapter<ReservationTime>{
 
 
 
-
+    // these two methods show a dialo to confirm reservation/cancelation
     private void openCancelDialog(final int position, String textreservationTime){
         LayoutInflater inflater = LayoutInflater.from(context);
         View subView = inflater.inflate(R.layout.confirmreservation_layout, null);

@@ -8,7 +8,7 @@ public class ReservationTime {
     private int user_id = 1;
     private boolean isFree = true;
 
-    /*-----Constructor-----*/
+
     public ReservationTime(String time) {
         this.time = time;
     }
@@ -21,12 +21,12 @@ public class ReservationTime {
         this.time = time;
     }
 
-    public void makeReservation(int user_id){
+    public void makeReservation(int user_id){   //reserve a room (set it !free and reserved by user_id)
         this.isFree = false;
         this.user_id = user_id;
     }
 
-    public void cancelReservation(){
+    public void cancelReservation(){  //cancel a reservation (set it free and the user_id to default)
         this.isFree = true;
         this.user_id = 1;
     }

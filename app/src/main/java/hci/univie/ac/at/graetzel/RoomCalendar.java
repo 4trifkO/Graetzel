@@ -31,11 +31,14 @@ public class RoomCalendar extends FragenActivity {
 
         timeList = new ArrayList<>();
         Integer i;
+        //adding new rooms to our list every time the activity starts to
+        // provide a simple prototype of the reservation
         for(i=8;i<20;i++) {
             timeList.add(new ReservationTime(i + " :00 - " + (i+1) + " :00 Uhr"));
         }
 
 
+        // initialising the list view and display it with the help of the adapter
         listView = (ListView) findViewById(R.id.listview);
 
         adapter = new ReservationListAdapter(this, R.layout.listview_reservationtimes_layout,timeList );

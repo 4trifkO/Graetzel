@@ -15,6 +15,7 @@ public class RoomReservation extends FragenActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_reservation2);
+        // initialising the image buttons and adding click listeners to it.
         btn_kitchen = findViewById(R.id.btn_kitchen);
         btn_learn = findViewById(R.id.btn_learn);
         btn_wash = findViewById(R.id.btn_wash);
@@ -42,6 +43,9 @@ public class RoomReservation extends FragenActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    // depending on the clicked button, there will show up the corresponding
+    // room reservation calendar (in prototyp simply illustrated with a different
+    // navigation header in the appbar
     public void openRoomCalendarActivity(String room_kind) {
         Intent intent = new Intent(this, RoomCalendar.class);
         intent.putExtra("room_kind",room_kind);
