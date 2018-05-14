@@ -36,6 +36,7 @@
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         android:textSize="50sp"
+        android:textColor="@color/weiss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +51,7 @@
         android:layout_marginTop="48dp"
         android:text="@string/zimmernummer"
         android:textSize="30sp"
+        android:textColor="@color/weiss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameview" />
@@ -63,6 +65,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/arbeitsort"
         android:textSize="30sp"
+        android:textColor="@color/weiss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +81,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/hobbys"
         android:textSize="30sp"
+        android:textColor="@color/weiss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />

@@ -9,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -114,6 +112,9 @@ class AbstimmungListAdapter  extends ArrayAdapter<AbstimmungData> {
         return view;
     }
 
+    //Dialog mit dem Kuchendiagramm
+    //PieChart Klasse aus der OpenSource Library https://github.com/PhilJay/MPAndroidChart
+    //PieChart Code wie es funktioniert von https://www.youtube.com/watch?v=MiVx3AQD_PI&t=2s
     private void openDiagrammDialog(int position, String text) {
         LayoutInflater inflater = LayoutInflater.from(context);
         final View subView = inflater.inflate(R.layout.diagram_layout, null);
