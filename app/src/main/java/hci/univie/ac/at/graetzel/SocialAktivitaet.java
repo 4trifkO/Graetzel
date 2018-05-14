@@ -11,7 +11,7 @@ public class SocialAktivitaet {
     private String aktivitaet;
     private String ort;
     private Date datum;
-    private SimpleDateFormat sdf = new SimpleDateFormat("hh:mm dd/MM/yyyy");
+    private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm dd/MM/yyyy");
     private ArrayList<User> teilnehmerListe;
 
     /*--------Constructor--------*/
