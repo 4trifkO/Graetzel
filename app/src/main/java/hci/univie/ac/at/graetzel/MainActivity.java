@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
@@ -54,6 +55,34 @@ public class MainActivity extends AppCompatActivity {
                 btn.setBackgroundResource(R.drawable.mainbuttonroundselector);
             }
 
+            if(option == 1){
+                switch (zeile){
+                    case 0:
+                        btn.setImageResource(R.drawable.fragen);
+                        break;
+                    case 1:
+                        btn.setImageResource(R.drawable.activity);
+                        break;
+                    case 2:
+                        btn.setImageResource(R.drawable.reservieren);
+                        break;
+                }
+            }else if(option == 2){
+                switch (zeile){
+                    case 0:
+                        btn.setImageResource(R.drawable.suchebiete);
+                        break;
+                    case 1:
+                        btn.setImageResource(R.drawable.abstimmen);
+                        break;
+                    case 2:
+                        btn.setImageResource(R.drawable.profil);
+                        break;
+                }
+            }
+
+            btn.setScaleType(ImageView.ScaleType.FIT_XY);
+
             final int finalZeile = zeile;
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -89,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             case 6:
                 intent = new Intent(this,Avatar1.class);
                 break;
-
         }
             startActivity(intent);
     }
