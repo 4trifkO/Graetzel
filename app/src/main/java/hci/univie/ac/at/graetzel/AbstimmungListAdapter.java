@@ -20,6 +20,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -137,6 +138,8 @@ class AbstimmungListAdapter  extends ArrayAdapter<AbstimmungData> {
         for (int i=0; i<abstimmungDataList.get(position).getOptionsNr();i++){
             array.add(new PieEntry(abstimmungDataList.get(position).getTheOneOptionData(i), abstimmungDataList.get(position).getTheOneOption(i)));
         }
+
+        //pieChart.animateX(1000, Easing.EasingOption.EaseInOutCubic);
 
         PieDataSet dataSet = new PieDataSet(array, "");
         dataSet.setSliceSpace(3f);

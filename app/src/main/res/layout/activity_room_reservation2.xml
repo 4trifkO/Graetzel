@@ -57,7 +57,7 @@
 
     <ImageButton
         android:id="@+id/btn_kitchen"
-        style="@style/buttons"
+        android:background="@drawable/mainbuttonrectselector"
         android:layout_width="141dp"
         android:layout_height="163dp"
         android:layout_marginStart="36dp"
@@ -68,7 +68,7 @@
 
     <ImageButton
         android:id="@+id/btn_learn"
-        style="@style/buttons"
+        android:background="@drawable/mainbuttonrectselector"
         android:layout_width="136dp"
         android:layout_height="163dp"
         android:layout_marginStart="124dp"
@@ -79,7 +79,7 @@
 
     <ImageButton
         android:id="@+id/btn_wash"
-        style="@style/buttons"
+        android:background="@drawable/mainbuttonrectselector"
         android:layout_width="141dp"
         android:layout_height="163dp"
         android:layout_marginEnd="32dp"

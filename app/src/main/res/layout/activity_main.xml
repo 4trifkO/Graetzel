@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="407dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,88 +19,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoimg2" />
 
-    <Button
-        android:id="@+id/buttonFragen"
-        style="@style/buttons"
+    <TableLayout
+        android:id="@+id/tableForButtons1"
         android:layout_width="0dp"
-        android:layout_height="145dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginStart="24dp"
-        android:text="Fragen\n&amp;\nAntworten"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/space"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
-    <Button
-        android:id="@+id/buttonSucheBiete"
-        style="@style/buttons"
-        android:layout_width="0dp"
-        android:layout_height="145dp"
-        android:layout_marginEnd="24dp"
-        android:text="Suche\n&amp;\nBiete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/space"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+    </TableLayout>
 
     <Space
         android:id="@+id/space"
         android:layout_width="16dp"
-        android:layout_height="490dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSucheBiete"
-        app:layout_constraintStart_toEndOf="@+id/buttonFragen"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tableForButtons2"
+        app:layout_constraintStart_toEndOf="@+id/tableForButtons1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/buttonGemeinsam"
-        style="@style/buttons"
-        android:layout_width="0dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Gemeinsame Aktivitäten"
-        app:layout_constraintEnd_toStartOf="@+id/space"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFragen" />
 
-    <Button
-        android:id="@+id/buttonAbstimmungen"
-        style="@style/buttons"
+    <TableLayout
+        android:id="@+id/tableForButtons2"
         android:layout_width="0dp"
-        android:layout_height="145dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginTop="16dp"
-        android:text="Abstimmungen"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/space"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSucheBiete" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
-    <Button
-        android:id="@+id/buttonRoom"
-        style="@style/buttons"
-        android:layout_width="0dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Raum-\nreservierungen"
-        app:layout_constraintEnd_toStartOf="@+id/space"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGemeinsam" />
-
-    <Button
-        android:id="@+id/buttonProfil"
-        android:layout_width="0dp"
-        android:layout_height="145dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/mainbuttonround"
-        android:text="Mein Profil"
-        android:textColor="@color/orange"
-        android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/space"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAbstimmungen" />
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>
