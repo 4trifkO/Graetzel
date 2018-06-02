@@ -76,14 +76,14 @@ public class GemeinsamActivity extends FragenActivity {
         builder.setTitle("Neue Aktivität\n\n");
         builder.setView(subView);
 
-        AlertDialog dialog = builder.create();
-
         builder.setNegativeButton("Schließen", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //This will close the Dialog
             }
         });
+
+        final AlertDialog dialog = builder.create();
 
         Button button = (Button) subView.findViewById(R.id.buttonAktivitaetPosten);
         button.setOnClickListener(new View.OnClickListener() {
@@ -113,14 +113,12 @@ public class GemeinsamActivity extends FragenActivity {
                                 editNeueOrt.getText().toString(),
                                 editUhrzeit.getText().toString()+" "+editDatum.getText().toString()));
                         adapter.notifyDataSetChanged();
-                        editNeueAktivitaet.setText("");
-                        editNeueOrt.setText("");
-                        editUhrzeit.setText("");
-                        editDatum.setText("");
+
                     }catch(Exception e){
                         Toast.makeText(ctx,"Sie müssen Uhrzeit & Datum im richtigen Format eingeben!", Toast.LENGTH_LONG).show();
                     }finally {
                         Toast.makeText(ctx,"Neue Aktivität gepostet", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
 
                 }
@@ -128,6 +126,6 @@ public class GemeinsamActivity extends FragenActivity {
             }
         });
 
-        builder.show();
+        dialog.show();
     }
 }

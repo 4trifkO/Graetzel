@@ -84,14 +84,14 @@ public class AbstimmungenActivity extends FragenActivity {
         builder.setMessage("Trennzeichen für mehr als eine Option: \";\"");
         builder.setView(subView);
 
-        AlertDialog dialog = builder.create();
-
         builder.setNegativeButton("Schließen", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //This will close the Dialog
             }
         });
+
+        final AlertDialog dialog = builder.create();
 
         Button button = (Button) subView.findViewById(R.id.buttonAbstimmPosten);
         button.setOnClickListener(new View.OnClickListener() {
@@ -123,14 +123,13 @@ public class AbstimmungenActivity extends FragenActivity {
                                 optionenArray);
                         abstimmungDataList.add(data);
                         adapter.notifyDataSetChanged();
-                        editNeueAbstimmung.setText("");
-                        editNeueOptionen.setText("");
                         Toast.makeText(ctx,"Neue Abstimmung gepostet", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                     }
                 }
             }
         });
 
-        builder.show();
+        dialog.show();
     }
 }

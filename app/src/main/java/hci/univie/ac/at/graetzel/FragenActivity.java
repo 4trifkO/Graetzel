@@ -74,14 +74,14 @@ public class FragenActivity extends AppCompatActivity {
         builder.setTitle("Neue Frage\n\n");
         builder.setView(subView);
 
-        AlertDialog dialog = builder.create();
-
         builder.setNegativeButton("Schließen", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //This will close the Dialog
             }
         });
+
+        final AlertDialog dialog = builder.create();
 
         Button button = (Button) subView.findViewById(R.id.buttonFragePosten);
         button.setOnClickListener(new View.OnClickListener() {
@@ -94,12 +94,12 @@ public class FragenActivity extends AppCompatActivity {
                     try{
                         fragenListe.add(new Frage(editNeueFrage.getText().toString()));
                         adapter.notifyDataSetChanged();
-                        editNeueFrage.setHint("Eingabe");
-                        editNeueFrage.setText("");
+
                     }catch (Exception e){
                         Log.e("Neue Frage", "Fehler beim adden einer neuen Frage");
                     }finally {
                         Toast.makeText(getApplicationContext(),"Neue Frage gepostet", Toast.LENGTH_LONG).show();
+                        dialog.dismiss();
                     }
 
                 }
@@ -107,7 +107,7 @@ public class FragenActivity extends AppCompatActivity {
             }
         });
 
-        builder.show();
+        dialog.show();
     }
 
     //Adden eines Menüs in der Action-Toolbar
