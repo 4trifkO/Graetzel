@@ -105,6 +105,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/itembuttonselector"
         android:text="Posten"
+        android:textColor="@color/dunkel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -11,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -78,10 +80,11 @@ public class AbstimmungenActivity extends FragenActivity {
 
         final EditText editNeueAbstimmung = (EditText) subView.findViewById(R.id.editNeueAbstimmung);
         final EditText editNeueOptionen = (EditText) subView.findViewById(R.id.editAbstimmOptionen);
+        final TextView alleOptionen = (TextView) subView.findViewById(R.id.optionenAlle);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.floatDialogStyle);
         builder.setTitle("Neue Abstimmung");
-        builder.setMessage("Trennzeichen für mehr als eine Option: \";\"");
+        builder.setMessage("Sie müssen mindestens 2 Optionen hinzufügen!");
         builder.setView(subView);
 
         builder.setNegativeButton("Schließen", new DialogInterface.OnClickListener() {
@@ -93,8 +96,31 @@ public class AbstimmungenActivity extends FragenActivity {
 
         final AlertDialog dialog = builder.create();
 
-        Button button = (Button) subView.findViewById(R.id.buttonAbstimmPosten);
-        button.setOnClickListener(new View.OnClickListener() {
+        ImageButton buttonAddOption = (ImageButton) subView.findViewById(R.id.addOption);
+        buttonAddOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context ctx =getApplicationContext();
+                if(editNeueOptionen.getText().toString().equals("")){
+                    Toast.makeText(ctx,"Sie müssen zuerst eine Option eingeben!", Toast.LENGTH_SHORT).show();
+                    editNeueOptionen.setHint("Hier Optionen eingeben");
+                }else{
+                    if(!editNeueOptionen.getText().toString().replaceAll("\\s+","").equals("")){
+                        if(alleOptionen.getText().toString().equals("0")){
+                            alleOptionen.setText(editNeueOptionen.getText().toString());
+                        }else{
+                            alleOptionen.setText(alleOptionen.getText().toString() + ";" +
+                                    editNeueOptionen.getText().toString());
+                        }
+                        editNeueOptionen.setText("");
+                        editNeueOptionen.setHint("Neue Option eingeben");
+                    }
+                }
+            }
+        });
+
+        Button buttonPosten = (Button) subView.findViewById(R.id.buttonAbstimmPosten);
+        buttonPosten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Context ctx =getApplicationContext();
@@ -102,12 +128,12 @@ public class AbstimmungenActivity extends FragenActivity {
                     Toast.makeText(ctx,"Sie müssen zuerst ein Abstimmungsthema eingeben!", Toast.LENGTH_SHORT).show();
                     editNeueAbstimmung.setHint("Hier Thema eingeben");
 
-                }else if(editNeueOptionen.getText().toString().equals("")){
-                    Toast.makeText(ctx,"Sie müssen zuerst eine Aktivitaet eingeben!", Toast.LENGTH_SHORT).show();
-                    editNeueOptionen.setHint("Hier Optionen eingeben\nBsp.: Option1;Option2;Option3");
+                }else if(alleOptionen.getText().toString().equals("0")){
+                    Toast.makeText(ctx,"Sie müssen mindestens zwei Optionen hinzufügen!", Toast.LENGTH_SHORT).show();
+                    editNeueOptionen.setHint("Hier Option eingeben");
 
                 }else{
-                    String[] tempArray=editNeueOptionen.getText().toString().split(";");
+                    String[] tempArray=alleOptionen.getText().toString().split(";");
                     ArrayList<String> optionenArray = new ArrayList<>();
 
                     for(int i=0; i<tempArray.length; i++){

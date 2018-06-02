@@ -39,20 +39,17 @@
         android:id="@+id/editAbstimmOptionen"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:maxLines="2"
-        android:minLines="1"
-        android:hint="Optionen eingeben \nBsp.: Option1;Option2;Option3"
+        android:layout_marginTop="16dp"
+        android:hint="Neue Option eingeben"
+        android:inputType="text"
         android:textColor="@color/dunkel"
         android:textColorHint="@color/dunkel"
         android:textCursorDrawable="@drawable/text_cursor"
         android:textSize="20sp"
         app:backgroundTint="@color/orange"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addOption"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNeueAbstimmung" />
 
@@ -66,8 +63,44 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/itembuttonselector"
         android:text="Posten"
+        android:textColor="@color/dunkel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionenAlle" />
+
+    <ImageButton
+        android:id="@+id/addOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/itembuttonselector"
+        app:layout_constraintBottom_toBottomOf="@+id/editAbstimmOptionen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editAbstimmOptionen"
+        app:srcCompat="@drawable/floatingplus" />
+
+    <TextView
+        android:id="@+id/textViewOptionen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Optionen:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAbstimmOptionen" />
+
+    <TextView
+        android:id="@+id/optionenAlle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewOptionen"
         app:layout_constraintTop_toBottomOf="@+id/editAbstimmOptionen" />
 </android.support.constraint.ConstraintLayout>
