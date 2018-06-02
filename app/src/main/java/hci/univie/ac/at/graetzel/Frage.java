@@ -6,11 +6,13 @@ import java.util.ArrayList;
 public class Frage {
     private String textFrage;
     private ArrayList<Antwort> antworten;
+    private boolean switchState;
 
     /*-----Constructor-----*/
     public Frage(String textFrage) {
         this.textFrage = textFrage;
         antworten = new ArrayList<>();
+        this.switchState = false;
     }
 
     /*----------Getter------------*/
@@ -26,5 +28,13 @@ public class Frage {
     public void addAntwort(String antwort) {
         Antwort ant = new Antwort(antwort);
         antworten.add(ant);
+    }
+
+    public boolean isSwitchState() {
+        return switchState;
+    }
+
+    public void setSwitchState(boolean switchState) {
+        this.switchState = switchState;
     }
 }

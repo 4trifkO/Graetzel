@@ -10,6 +10,7 @@ public class AbstimmungData {
     private ArrayList<String> options;
     private int[] optionData;
     private boolean abgestimmt;
+    private boolean switchState;
 
     /*-----Constructor-----*/
     public AbstimmungData(String thema, ArrayList<String> options) {
@@ -18,6 +19,8 @@ public class AbstimmungData {
         this.optionsNr = options.size();
         optionData = new int[optionsNr];
         this.abgestimmt=false;
+        this.switchState=false;
+
     }
 
     /*----------Getter------------*/
@@ -53,6 +56,14 @@ public class AbstimmungData {
     public void increaseValue(int position){
         optionData[position]++;
         abgestimmt=true;
+    }
+
+    public boolean isSwitchState() {
+        return switchState;
+    }
+
+    public void setSwitchState(boolean switchState) {
+        this.switchState = switchState;
     }
 
     //Für FakeData

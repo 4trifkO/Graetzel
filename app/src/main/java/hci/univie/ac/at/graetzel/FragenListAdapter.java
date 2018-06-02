@@ -47,7 +47,7 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
         View view = inflater.inflate(layoutResource, null);
 
         //Verbindet Backend mit Frontend Widgets
-        Frage frage = fragenListe.get(position);
+        final Frage frage = fragenListe.get(position);
         final TextView textFrage = (TextView) view.findViewById(R.id.textFrage);
         TextView textAntworten = (TextView) view.findViewById(R.id.textAntworten);
 
@@ -59,14 +59,22 @@ public class FragenListAdapter extends ArrayAdapter<Frage> {
         textFrage.setText(frage.getTextFrage());
         textAntworten.setText(arrayListToTextView(frage.getAntworten()));
 
+        if(frage.isSwitchState()){
+            switchAntworten.setChecked(true);
+            layout.setVisibility(View.VISIBLE);
+        }
+
+
         /*Die Antworten-Liste wird abhängig vom Switch angezeigt oder versteckt*/
         switchAntworten.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked){
+                    frage.setSwitchState(true);
                     layout.setVisibility(View.VISIBLE);
 
                 }else{
+                    frage.setSwitchState(false);
                     layout.setVisibility(View.GONE);
                 }
             }

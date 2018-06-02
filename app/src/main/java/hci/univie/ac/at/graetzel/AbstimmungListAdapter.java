@@ -63,14 +63,23 @@ class AbstimmungListAdapter  extends ArrayAdapter<AbstimmungData> {
 
         switchAbstimmen.setVisibility(abstimmung.getAbgestimmt()!=true?View.VISIBLE:View.GONE);
 
+        if(abstimmung.isSwitchState()){
+            switchAbstimmen.setChecked(true);
+            if(!abstimmung.getAbgestimmt()){
+                layout.setVisibility(View.VISIBLE);
+            }
+        }
+
         /*Die Abstimmungs-Optionen-Liste wird abhängig vom Switch angezeigt oder versteckt*/
         switchAbstimmen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked){
+                    abstimmung.setSwitchState(true);
                     layout.setVisibility(View.VISIBLE);
 
                 }else{
+                    abstimmung.setSwitchState(false);
                     layout.setVisibility(View.GONE);
                 }
             }

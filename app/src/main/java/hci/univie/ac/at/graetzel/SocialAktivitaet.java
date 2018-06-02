@@ -13,6 +13,7 @@ public class SocialAktivitaet {
     private Date datum;
     private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm dd/MM/yyyy");
     private ArrayList<User> teilnehmerListe;
+    private boolean switchState;
 
     /*--------Constructor--------*/
     public SocialAktivitaet(String aktivitaet, String ort, String datum) throws Exception{
@@ -26,6 +27,7 @@ public class SocialAktivitaet {
             Log.e("DateParser",e.getMessage());
             throw e;
         }
+        this.switchState = false;
     }
 
     /*----------Getter------------*/
@@ -49,5 +51,13 @@ public class SocialAktivitaet {
     public void addTeilnehmer(String name){
         User teilnehmer = new User(name);
         teilnehmerListe.add(teilnehmer);
+    }
+
+    public boolean isSwitchState() {
+        return switchState;
+    }
+
+    public void setSwitchState(boolean switchState) {
+        this.switchState = switchState;
     }
 }

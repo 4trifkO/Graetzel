@@ -45,7 +45,7 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
         View view = inflater.inflate(layoutResource, null);
 
         //Verbindet Backend mit Frontend Widgets
-        SocialAktivitaet aktivitaet = aktivitaetenList.get(position);
+        final SocialAktivitaet aktivitaet = aktivitaetenList.get(position);
         TextView textAktivitaet = (TextView) view.findViewById(R.id.textAktivitaet);
         TextView textOrt = (TextView) view.findViewById(R.id.textOrt);
         TextView textDate = (TextView) view.findViewById(R.id.textDate);
@@ -61,14 +61,21 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
         textDate.setText(aktivitaet.getDatum());
         textTeilnehmer.setText(arrayListToTextView(aktivitaet.getTeilnehmerListe()));
 
+        if(aktivitaet.isSwitchState()){
+            switchTeilnehmer.setChecked(true);
+            layout.setVisibility(View.VISIBLE);
+        }
+
         /*Die Teilnehmer-Liste wird abhängig vom Switch angezeigt oder versteckt*/
         switchTeilnehmer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked){
+                    aktivitaet.setSwitchState(true);
                     layout.setVisibility(View.VISIBLE);
 
                 }else{
+                    aktivitaet.setSwitchState(false);
                     layout.setVisibility(View.GONE);
                 }
             }
