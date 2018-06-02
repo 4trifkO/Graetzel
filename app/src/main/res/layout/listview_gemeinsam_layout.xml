@@ -58,7 +58,7 @@
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/itembutton"
+        android:background="@drawable/itembuttonselector"
         android:text="Teilnehmen"
         android:textColor="@color/weiss"
         app:layout_constraintBottom_toTopOf="@+id/layoutGemeinsam"

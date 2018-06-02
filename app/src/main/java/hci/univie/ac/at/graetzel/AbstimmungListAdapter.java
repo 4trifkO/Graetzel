@@ -20,7 +20,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
@@ -86,7 +85,7 @@ class AbstimmungListAdapter  extends ArrayAdapter<AbstimmungData> {
             }
         });
 
-        Drawable itembutton = ContextCompat.getDrawable(context,R.drawable.itembutton);
+        Drawable itembutton = ContextCompat.getDrawable(context,R.drawable.itembutton1);
 
         //Erstellen von N Buttons zur Wahl
         for (int i = 0; i < abstimmung.getOptionsNr(); i++) {

@@ -12,7 +12,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="164dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/itembutton"
+        android:background="@drawable/itembuttonselector"
         android:text="Stornieren"
         android:textColor="@color/weiss"
 
@@ -51,7 +51,7 @@
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/itembutton"
+        android:background="@drawable/itembuttonselector"
         android:text="Reservieren"
         android:textColor="@color/weiss"
         app:layout_constraintStart_toEndOf="@+id/imageViewReservation"
