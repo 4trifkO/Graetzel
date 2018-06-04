@@ -27,7 +27,6 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
     private Context context;
     private int layoutResource;
     private List<SocialAktivitaet> aktivitaetenList;
-    private String[] fakeNamen = {"Jelena","Stefan","Klaus","Benni","Oliver","Michael","Stefi","Anna","Emili","Stormtrooper"};
 
     /*--------Constructor--------*/
     public GemeinsamListAdapter(Context context, int resource, List<SocialAktivitaet> liste) {
@@ -81,13 +80,25 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
             }
         });
 
+        if(aktivitaet.isTeilnahmeState()){
+            buttonTeilnehmen.setText("Absagen");
+        }else{
+            buttonTeilnehmen.setText("Teilnehmen");
+        }
+
         /*Fügt beim Click des Teilnehmen-Buttons einen Random-Teilnehmer zur Aktivität hinzu*/
         buttonTeilnehmen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 try{
-                    addRandomTeilnehmer(position);
+                    if(aktivitaet.isTeilnahmeState()){
+                        deleteRandomTeilnehmer(position);
+                        aktivitaet.setTeilnahmeState(false);
+                    }else {
+                        aktivitaet.setTeilnahmeState(true);
+                        addRandomTeilnehmer(position);
+                    }
 
                 }catch(Exception e){
                     Log.e("AddTeilnehmerFehler:", e.getMessage());
@@ -120,18 +131,21 @@ public class GemeinsamListAdapter extends ArrayAdapter<SocialAktivitaet> {
     //Abhängig von der Randomzahl wird ein Name aus dem FakeNamen-Array gezogen
     //Neuer Teilnehmer wird zur Aktivität hinzugefügt
     public void addRandomTeilnehmer(int position){
-        Random rn = new Random();
-        int randomName = rn.nextInt(10);
-        int randomZahl = rn.nextInt(1000);
         try{
-            aktivitaetenList.get(position).addTeilnehmer(fakeNamen[randomName]+randomZahl);
+            aktivitaetenList.get(position).addTeilnehmer();
             notifyDataSetChanged();
         }catch(Exception e){
             Log.e("AddRandomTeilnehmer",e.getMessage());
         }finally {
-            Toast.makeText(context,"Teilnehmer hinzugefügt",Toast.LENGTH_LONG).show();
+            Toast.makeText(context,"Sie nehmen teil",Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    private void deleteRandomTeilnehmer(int position) {
+        aktivitaetenList.get(position).deleteTeilnehmer();
+        notifyDataSetChanged();
+        Toast.makeText(context,"Sie haben abgesagt",Toast.LENGTH_LONG).show();
     }
 
 }
